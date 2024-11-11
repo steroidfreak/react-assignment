@@ -81,9 +81,11 @@ export default function NavBar() {
                         <div className="d-flex align-items-center">
                             <div className="position-relative me-3">
                                 <i className="fas fa-shopping-cart fa-lg"></i>
-                                <span className="badge rounded-pill cart-badge">3</span>
+                                {/* <span className="badge rounded-pill cart-badge">3</span> */}
                             </div>
-                            <button className="btn btn-primary ms-2">Sign In</button>
+                            <Link to="/register" className="btn btn-primary ms-2">
+                                Register
+                            </Link>
                         </div>
                     </div>
                 </div>

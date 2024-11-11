@@ -6,6 +6,10 @@ import HomePage from "./homepage";
 import Categories from "./Categories";
 import Products from "./Products";
 import Newsletter from "./Newsletter";
+import Subscribe from "./Subscribe";
+import RegisterPage from "./RegisterPage";
+import BootstrapNavbar from "./BootstrapNavbar";
+import MaterialUINavbar from "./MaterialUINavbar";
 
 
 function App() {
@@ -14,13 +18,16 @@ function App() {
     return (
         <>
             <NavBar />
+            {/* <BootstrapNavbar /> */}
+            {/* <MaterialUINavbar /> */}
             <Switch>
                 <Route path="/" component={HomePage} />
                 <Route path="/categories" component={Categories} />
                 <Route path="/products" component={Products} />
                 <Route path="/newsletter" component={Newsletter} />
-            </Switch>
+                <Route path="/register" component={RegisterPage} />
 
+            </Switch>
             {/* <!-- Footer --> */}
             <footer className="bg-dark text-light py-4">
                 <div className="container">
