@@ -49,17 +49,17 @@ body {
   transform: translateY(-5px);
 }
 
-.btn-primary {
+/* .btn-primary {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
   color: var(--primary-color);
-}
+} */
 
-.btn-primary:hover {
+/* .btn-primary:hover {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
   color: var(--light-color);
-}
+} */
 
 /* .nav-link {
   color: var(--primary-color);
@@ -92,4 +92,61 @@ body {
 #newsletter {
   background-color: var(--secondary-color);
   color: var(--light-color);
+}
+
+/* .flash-alert {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: auto;
+  max-width: 90%;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+} */
+
+.flash-alert {
+  animation: fadeOut 4s ease forwards;
+  padding-top: 56px;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.product-card-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.product-card-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+}
+
+.product-card-exit {
+  opacity: 1;
+}
+
+.product-card-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.product-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px; /* optional, to add rounded corners */
 }

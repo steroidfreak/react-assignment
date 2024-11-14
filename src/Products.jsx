@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import ProductCard from "./ProductCard";
+import axios from "axios";
 
 export default function Products() {
   return (
@@ -10,64 +12,37 @@ export default function Products() {
           <div className="row g-4">
             {/* <!-- Product 1 --> */}
             <div className="col-md-3">
-              <div className="product-card card h-100">
-                <img
-                  src="src\assets\images\classic_white_shirt.png"
-                  className="card-img-top"
-                  alt="Product"
-                ></img>
-                <div className="card-body">
-                  <h5 className="card-title">Classic White Shirt</h5>
-                  <p className="card-text text-muted">$49.99</p>
-                  <button className="btn btn-primary w-100">Add to Cart</button>
-                </div>
-              </div>
+              <ProductCard
+                imageUrl="src\assets\images\classic_white_shirt.png"
+                productName="Classic White Shirt"
+                price="19.99" />
+
             </div>
             {/* <!-- Product 2 --> */}
             <div className="col-md-3">
-              <div className="product-card card h-100">
-                <img
-                  src="src\assets\images\denim_jacket.png"
-                  className="card-img-top"
-                  alt="Product"
-                ></img>
-                <div className="card-body">
-                  <h5 className="card-title">Denim Jacket</h5>
-                  <p className="card-text text-muted">$89.99</p>
-                  <button className="btn btn-primary w-100">Add to Cart</button>
-                </div>
-              </div>
+              <ProductCard
+                imageUrl="src\assets\images\denim_jacket.png"
+                productName="Denim Jacket"
+                price="89.99" />
+
             </div>
             {/* <!-- Product 3 --> */}
             <div className="col-md-3">
-              <div className="product-card card h-100">
-                <img
-                  src="src\assets\images\leather_boots.png"
-                  className="card-img-top"
-                  alt="Product"
-                ></img>
-                <div className="card-body">
-                  <h5 className="card-title">Leather Boots</h5>
-                  <p className="card-text text-muted">$129.99</p>
-                  <button className="btn btn-primary w-100">Add to Cart</button>
-                </div>
-              </div>
+              <ProductCard
+                imageUrl="src\assets\images\leather_boots.png"
+                productName="Leather Boots"
+                price="129.99" />
+
             </div>
             {/* <!-- Product 4 --> */}
             <div className="col-md-3">
-              <div className="product-card card h-100">
-                <img
-                  src="src\assets\images\summer_dress_1.png"
-                  className="card-img-top"
-                  alt="Product"
-                ></img>
-                <div className="card-body">
-                  <h5 className="card-title">Summer Dress</h5>
-                  <p className="card-text text-muted">$69.99</p>
-                  <button className="btn btn-primary w-100">Add to Cart</button>
-                </div>
-              </div>
+              <ProductCard
+                imageUrl="src\assets\images\summer_dress_1.png"
+                productName="Summer Dress"
+                price="69.99" />
+
             </div>
+
           </div>
         </div>
       </section>

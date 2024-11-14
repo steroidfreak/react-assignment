@@ -6,6 +6,7 @@ export default function Newsletter() {
         salutation: '',
         email: ''
     });
+    const [demoResponse, setDemoResponse] = useState(null);
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -62,7 +63,7 @@ export default function Newsletter() {
                             />
                         </div>
 
-                        <div className="mb-3 ">
+                        <div className="mb-3">
                             <label htmlFor="email" className="form-label">
                                 Email
                             </label>
@@ -84,6 +85,7 @@ export default function Newsletter() {
                             Subscribe
                         </button>
                     </form>
+
                 </div>
             </div>
         </div>

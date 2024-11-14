@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Switch } from "wouter";
 import "./styles.css"
 import NavBar from "./NavBar";
@@ -8,26 +8,45 @@ import Products from "./Products";
 import Newsletter from "./Newsletter";
 import Subscribe from "./Subscribe";
 import RegisterPage from "./RegisterPage";
-import BootstrapNavbar from "./BootstrapNavbar";
-import MaterialUINavbar from "./MaterialUINavbar";
-
+import ProductsPage from "./ProductsPage";
+import { useFlashMessage } from './FlashMessageStore';
+import ShoppingCart from "./ShoppingCart";
 
 function App() {
 
+    const { getMessage, clearMessage } = useFlashMessage();
+    const flashMessage = getMessage();
 
+    useEffect(() => {
+
+        const timer = setTimeout(() => {
+            clearMessage();
+        }
+            , 4000);
+        return () => {
+            clearTimeout(timer);
+        };
+    }
+        , [flashMessage]);
     return (
         <>
             <NavBar />
-            {/* <BootstrapNavbar /> */}
-            {/* <MaterialUINavbar /> */}
+            {flashMessage.message && (
+                <div className={`container alert alert-${flashMessage.type} text-center flash-alert`}>
+                    {flashMessage.message}
+                </div>
+            )}
             <Switch>
                 <Route path="/" component={HomePage} />
                 <Route path="/categories" component={Categories} />
-                <Route path="/products" component={Products} />
+                <Route path="/products" component={ProductsPage} />
                 <Route path="/newsletter" component={Newsletter} />
                 <Route path="/register" component={RegisterPage} />
+                <Route path="/cart" component={ShoppingCart} />
 
             </Switch>
+
+
             {/* <!-- Footer --> */}
             <footer className="bg-dark text-light py-4">
                 <div className="container">

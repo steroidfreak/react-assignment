@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "productName": "Classic White Shirt",
+    "category": "Men's Fashion",
+    "imageUrl": "src/assets/images/classic_white_shirt.png",
+    "price": 19.99,
+    "description": "A timeless white shirt made from high-quality cotton, perfect for any occasion."
+  },
+  {
+    "id": 2,
+    "productName": "Denim Jacket",
+    "category": "Men's Fashion",
+    "imageUrl": "src/assets/images/denim_jacket.png",
+    "price": 89.99,
+    "description": "Stylish and durable denim jacket, suitable for all seasons."
+  },
+  {
+    "id": 3,
+    "productName": "Leather Boots",
+    "category": "Men's Fashion",
+    "imageUrl": "src/assets/images/leather_boots.png",
+    "price": 129.99,
+    "description": "Classic leather boots that provide comfort and style for any outfit."
+  },
+  {
+    "id": 4,
+    "productName": "Summer Dress",
+    "category": "Women's Fashion",
+    "imageUrl": "src/assets/images/summer_dress_1.png",
+    "price": 69.99,
+    "description": "A breezy summer dress that combines comfort and elegance."
+  },
+  {
+    "id": 5,
+    "productName": "Casual Sneakers",
+    "category": "Men's Fashion",
+    "imageUrl": "src/assets/images/casual_sneakers.png",
+    "price": 49.99,
+    "description": "Comfortable and stylish sneakers suitable for everyday wear."
+  },
+  {
+    "id": 6,
+    "productName": "Wool Cardigan",
+    "category": "Women's Fashion",
+    "imageUrl": "src/assets/images/wool_cardigan.png",
+    "price": 39.99,
+    "description": "Warm and cozy cardigan, perfect for layering in colder weather."
+  },
+  {
+    "id": 7,
+    "productName": "Slim Fit Jeans",
+    "category": "Men's Fashion",
+    "imageUrl": "src/assets/images/slim_fit_jeans.png",
+    "price": 59.99,
+    "description": "Modern slim fit jeans with a touch of stretch for extra comfort."
+  },
+  {
+    "id": 8,
+    "productName": "Floral Blouse",
+    "category": "Women's Fashion",
+    "imageUrl": "src/assets/images/floral_blouse.png",
+    "price": 29.99,
+    "description": "A beautiful floral blouse that adds a touch of elegance to any outfit."
+  },
+  {
+    "id": 9,
+    "productName": "Formal Blazer",
+    "category": "Men's Fashion",
+    "imageUrl": "src/assets/images/formal_blazer.png",
+    "price": 89.99,
+    "description": "A sleek blazer that’s perfect for formal events and office wear."
+  },
+  {
+    "id": 10,
+    "productName": "Cargo Pants",
+    "category": "Men's Fashion",
+    "imageUrl": "src/assets/images/cargo_pants.png",
+    "price": 49.99,
+    "description": "Versatile cargo pants with multiple pockets for functionality and style."
+  },
+  {
+    "id": 11,
+    "productName": "Athletic T-shirt",
+    "category": "Men's Fashion",
+    "imageUrl": "src/assets/images/athletic_tshirt.png",
+    "price": 24.99,
+    "description": "Breathable, lightweight athletic T-shirt ideal for workouts and casual wear."
+  },
+  {
+    "id": 12,
+    "productName": "Hiking Boots",
+    "category": "Men's Fashion",
+    "imageUrl": "src/assets/images/hiking_boots.png",
+    "price": 139.99,
+    "description": "Durable hiking boots designed for comfort and stability on rough terrain."
+  },
+  {
+    "id": 13,
+    "productName": "Winter Coat",
+    "category": "Women's Fashion",
+    "imageUrl": "src/assets/images/winter_coat.png",
+    "price": 199.99,
+    "description": "Warm and insulated winter coat to keep you cozy during the coldest days."
+  },
+  {
+    "id": 14,
+    "productName": "Linen Shirt",
+    "category": "Men's Fashion",
+    "imageUrl": "src/assets/images/linen_shirt.png",
+    "price": 34.99,
+    "description": "A breathable linen shirt, ideal for warm weather and casual outings."
+  },
+  {
+    "id": 15,
+    "productName": "Canvas Backpack",
+    "category": "Accessories",
+    "imageUrl": "src/assets/images/canvas_backpack.png",
+    "price": 44.99,
+    "description": "A durable canvas backpack with ample storage for daily essentials."
+  },
+  {
+    "id": 16,
+    "productName": "Striped Scarf",
+    "category": "Accessories",
+    "imageUrl": "src/assets/images/striped_scarf.png",
+    "price": 19.99,
+    "description": "A soft striped scarf that adds a stylish layer to any outfit."
+  },
+  {
+    "id": 17,
+    "productName": "Polka Dot Dress",
+    "category": "Women's Fashion",
+    "imageUrl": "src/assets/images/polka_dot_dress.png",
+    "price": 79.99,
+    "description": "A playful polka dot dress for a fun and feminine look."
+  },
+  {
+    "id": 18,
+    "productName": "Slim Fit Chinos",
+    "category": "Men's Fashion",
+    "imageUrl": "src/assets/images/slim_fit_chinos.png",
+    "price": 54.99,
+    "description": "Classic slim fit chinos, perfect for casual and semi-formal occasions."
+  },
+  {
+    "id": 19,
+    "productName": "Ankle Boots",
+    "category": "Women's Fashion",
+    "imageUrl": "src/assets/images/ankle_boots.png",
+    "price": 99.99,
+    "description": "Stylish ankle boots that complement any outfit with ease."
+  },
+  {
+    "id": 20,
+    "productName": "Polo Shirt",
+    "category": "Men's Fashion",
+    "imageUrl": "src/assets/images/polo_shirt.png",
+    "price": 34.99,
+    "description": "A classic polo shirt, perfect for both casual and semi-formal occasions."
+  },
+  {
+    "id": 21,
+    "productName": "Silk Tie",
+    "category": "Accessories",
+    "imageUrl": "src/assets/images/silk_tie.png",
+    "price": 29.99,
+    "description": "A premium silk tie that adds a touch of sophistication to any suit."
+  },
+  {
+    "id": 22,
+    "productName": "Leather Belt",
+    "category": "Accessories",
+    "imageUrl": "src/assets/images/leather_belt.png",
+    "price": 24.99,
+    "description": "Classic leather belt that pairs well with both jeans and dress pants."
+  },
+  {
+    "id": 23,
+    "productName": "Maxi Dress",
+    "category": "Women's Fashion",
+    "imageUrl": "src/assets/images/maxi_dress.png",
+    "price": 84.99,
+    "description": "A flowy maxi dress that combines comfort and style."
+  },
+  {
+    "id": 24,
+    "productName": "Sports Cap",
+    "category": "Accessories",
+    "imageUrl": "src/assets/images/sports_cap.png",
+    "price": 14.99,
+    "description": "Lightweight and adjustable sports cap, ideal for outdoor activities."
+  },
+  {
+    "id": 25,
+    "productName": "Cardigan Sweater",
+    "category": "Women's Fashion",
+    "imageUrl": "src/assets/images/cardigan_sweater.png",
+    "price": 59.99,
+    "description": "A warm cardigan sweater, perfect for layering in cooler weather."
+  },
+  {
+    "id": 26,
+    "productName": "Graphic T-Shirt",
+    "category": "Men's Fashion",
+    "imageUrl": "src/assets/images/graphic_tshirt.png",
+    "price": 19.99,
+    "description": "Casual graphic T-shirt for a relaxed, everyday look."
+  },
+  {
+    "id": 27,
+    "productName": "Ballet Flats",
+    "category": "Women's Fashion",
+    "imageUrl": "src/assets/images/ballet_flats.png",
+    "price": 49.99,
+    "description": "Comfortable and stylish ballet flats for any occasion."
+  },
+  {
+    "id": 28,
+    "productName": "Wristwatch",
+    "category": "Accessories",
+    "imageUrl": "src/assets/images/wristwatch.png",
+    "price": 99.99,
+    "description": "Elegant wristwatch with a leather strap and minimalist design."
+  },
+  {
+    "id": 29,
+    "productName": "Beanie Hat",
+    "category": "Accessories",
+    "imageUrl": "src/assets/images/beanie_hat.png",
+    "price": 12.99,
+    "description": "Warm beanie hat for those cold winter days."
+  },
+  {
+    "id": 30,
+    "productName": "Silk Scarf",
+    "category": "Accessories",
+    "imageUrl": "src/assets/images/silk_scarf.png",
+    "price": 39.99,
+    "description": "Luxurious silk scarf to add elegance to any ensemble."
+  }
+]

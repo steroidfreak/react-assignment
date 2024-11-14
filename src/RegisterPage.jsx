@@ -4,6 +4,7 @@ import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
 import * as Yup from 'yup';
 import { useLocation } from 'wouter';
+import { useFlashMessage } from './FlashMessageStore';
 
 function RegisterPage() {
 
@@ -38,21 +39,39 @@ function RegisterPage() {
     // presses the submit button.
     // parameter 1: the values from the form (an object containing all the data in the form, like req.body)
     // parameter 2: an object, known as the formikHelpers, has a number of utilty functions 
+    // const handleSubmit = async (values, formikHelpers) => {
+    //     console.log(`${import.meta.env.VITE_API_URL}/api/register`);
+    //     try {
+    //         await axios.post(`${import.meta.env.VITE_API_URL}/api/register`, values);
+    //         formikHelpers.setSubmitting(false); // indiate the form is not being submitted 
+    //         // (i.e we have processed the form)
+    //     } catch (e) {
+    //         alert("Error registeration =" + e);
+    //     } finally {
+    //         // the finally block of a try...catch will always run
+    //         // regardless if there's any exceptions at all
+    //         setLocation("/"); // go back to the "/" route
+    //     }
+
+    // }
+    // Put this after the other hooks at the top of `RegisterPage.jsx`
+    const { showMessage } = useFlashMessage();
+
     const handleSubmit = async (values, formikHelpers) => {
-
         try {
-            await axios.post(`${import.meta.env.VITE_API_URL}/api/register`, values);
-            formikHelpers.setSubmitting(false); // indiate the form is not being submitted 
-            // (i.e we have processed the form)
-        } catch (e) {
-            alert("Error registeration =" + e);
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/register`, values);
+            console.log('Registration successful:', response.data);
+            showMessage('Registration successful!', 'success');
+        } catch (error) {
+            console.error('Registration failed:', error.response?.data || error.message);
+            showMessage('Registration failed. Please try again.', 'error');
         } finally {
-            // the finally block of a try...catch will always run
-            // regardless if there's any exceptions at all
-            setLocation("/"); // go back to the "/" route
+            formikHelpers.setSubmitting(false);
+            setLocation('/');
         }
+    };
 
-    }
+
 
 
     return (
