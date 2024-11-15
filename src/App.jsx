@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Route, Switch } from "wouter";
 import "./styles.css"
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import NavBar from "./NavBar";
 import HomePage from "./homepage";
-import Categories from "./Categories";
-import Products from "./Products";
 import Newsletter from "./Newsletter";
-import Subscribe from "./Subscribe";
 import RegisterPage from "./RegisterPage";
 import ProductsPage from "./ProductsPage";
 import { useFlashMessage } from './FlashMessageStore';
@@ -38,7 +36,6 @@ function App() {
             )}
             <Switch>
                 <Route path="/" component={HomePage} />
-                <Route path="/categories" component={Categories} />
                 <Route path="/products" component={ProductsPage} />
                 <Route path="/newsletter" component={Newsletter} />
                 <Route path="/register" component={RegisterPage} />

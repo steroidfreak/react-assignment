@@ -150,3 +150,54 @@ body {
   object-fit: cover;
   border-radius: 8px; /* optional, to add rounded corners */
 }
+
+.card {
+  height: 100%; /* Ensures each card occupies full height in its column */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-title,
+.card-text {
+  margin-bottom: 10px; /* Adds spacing between text elements */
+}
+
+.btn {
+  margin-top: auto; /* Pushes the button to the bottom of card */
+}
+
+.hero-section {
+  padding-top: 80px; /* Adds space at the top */
+  padding-bottom: 40px; /* Adds space at the bottom */
+}
+
+.text-title {
+  margin-top: 20px; /* Pushes text down slightly */
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    text-align: center; /* Centers text for better readability */
+  }
+
+  .video-box {
+    margin-top: 20px; /* Adds spacing between text and video on small screens */
+  }
+
+  .text-title {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+    margin-top: 40px; /* Pushes text further down */
+  }
+}
+/* In your CSS file */
+.card:hover {
+  background-color: #f8f9fa; /* Light hover effect */
+  transition: background-color 0.3s ease;
+}

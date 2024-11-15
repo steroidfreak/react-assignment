@@ -52,15 +52,7 @@ export default function NavBar() {
                                     Home
                                 </Link>
                             </li>
-                            <li className="nav-item">
-                                <Link
-                                    href="/categories"
-                                    className={`nav-link ${location === "/categories" ? "active" : ""
-                                        }`}
-                                >
-                                    Categories
-                                </Link>
-                            </li>
+
                             <li className="nav-item">
                                 <Link
                                     href="/products"

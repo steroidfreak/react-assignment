@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProductCard from './ProductCard';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // Import the styles
 
 function ProductsPage() {
     const [products, setProducts] = useState([]);
@@ -34,6 +36,8 @@ function ProductsPage() {
                     </div>
                 ))}
             </div>
+
+            <ToastContainer />  {/* Add ToastContainer to show notifications */}
         </div>
     );
 }
