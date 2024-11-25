@@ -2,6 +2,7 @@ import React from 'react';
 
 // import useCart from our CartStore that we can access the data of the shopping cart
 import { useCart } from "./CartStore";
+import { useJwt } from './UserStore';
 
 export default function ShoppingCart() {
 
@@ -9,7 +10,7 @@ export default function ShoppingCart() {
     const { getCart, getCartTotal, modifyCart, deleteCartItem } = useCart();
     const cart = getCart();
     return <>
-        <div className="container mt-4">
+        <div className="container mt-4 py-4">
             <h1>Shopping Cart</h1>
             {cart.length === 0 ? (<p>Your cart is empty</p>) : (
                 <>

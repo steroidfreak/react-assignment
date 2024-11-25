@@ -2,33 +2,7 @@ import { atom, useAtom } from 'jotai'
 import Immutable from "seamless-immutable";
 
 const initialCart = Immutable([
-    {
-        "id": 1,
-        "product_id": 333,
-        "quantity": 10,
-        "productName": "Organic Green Tea",
-        "price": 12.99,
-        "imageUrl": "https://picsum.photos/id/225/300/200",
-        "description": "Premium organic green tea leaves, rich in antioxidants and offering a smooth, refreshing taste."
-    },
-    {
-        "id": 2,
-        "product_id": 333,
-        "quantity": 10,
-        "productName": "Organic Black Tea",
-        "price": 12.99,
-        "imageUrl": "https://picsum.photos/id/225/300/200",
-        "description": "Premium organic green tea leaves, rich in antioxidants and offering a smooth, refreshing taste."
-    },
-    {
-        "id": 444,
-        "product_id": 11555,
-        "quantity": 10,
-        "productName": "Organic White Tea",
-        "price": 12.99,
-        "imageUrl": "https://picsum.photos/id/225/300/200",
-        "description": "Premium organic green tea leaves, rich in antioxidants and offering a smooth, refreshing taste."
-    }
+
 ])
 
 // create an atom to get the current shopping cart array
@@ -56,47 +30,12 @@ export const useCart = () => {
         // }
         // return total;
 
-        let total = cart.reduce(function(total, item){
+        let total = cart.reduce(function (total, item) {
             return total + (item.price * item.quantity)
         }, 0);
 
-        return total;``
+        return total; ``
     }
-    
-    // setter/mutator/ in React state management lingo, an action
-    // an action is a process that may changes the state or involve the state somehow
-    // 
-    // Pure JavaScript approach:
-    // const addToCart = (product) => {
-    //     // 1. we need find the product already exists in the shopping cart
-    //     // - if the product already exists we should increase the quantity
-    //     // 2. if the product does not exist in the shopping cart, then we
-    //     // create a new cart item for the product
-
-    //     // the currentCart parameter in the arrow function is guaranteed to be
-    //     // the most recent one
-    //     setCart((currentCart)=>{
-    //         const existingItem = currentCart.find( item => item.product_id == product.id);
-    //         if (existingItem) {
-    //             const modifiedItem = { ...existingItem, quantity: existingItem.quantity + 1};
-    //             const clonedCart = currentCart.map(item => {
-    //                 if (item.id !== existingItem.id) {
-    //                     return item
-    //                 } else {
-    //                     return modifiedItem;
-    //                 }
-    //             } )
-    //             return clonedCart;  // <-- the new value for the `cart` atom
-    //         } else {
-    //             const newCartItem = {
-    //                 ...product,
-    //                 product_id: product.id,
-    //                 id: Math.floor(Math.random() * 10000) + 1
-    //             }
-    //             return [...currentCart, newCartItem];
-    //         }
-    //     })
-    // }
 
     const addToCart = (product) => {
         setCart(currentCart => {
@@ -106,7 +45,7 @@ export const useCart = () => {
                 // item exists
                 const currentQuantity = currentCart[existingItemIndex].quantity;
                 // basicially means: currentCart[existingItemIndex].quantity = currentQuantity + 1
-                return currentCart.setIn([existingItemIndex, 'quantity'], currentQuantity+1);
+                return currentCart.setIn([existingItemIndex, 'quantity'], currentQuantity + 1);
 
             } else {
                 // does not exists
@@ -129,20 +68,20 @@ export const useCart = () => {
         // 3. if the quantity is reduced to 0, remove from shopping cart
         // 4. if not, update the new quantity
         setCart(currentCart => {
-          const existingItemIndex = currentCart.findIndex(item => item.product_id === product_id);
+            const existingItemIndex = currentCart.findIndex(item => item.product_id === product_id);
 
-          // check if there is a cart item with that product id
-          if (existingItemIndex !== -1) {
-            if (quantity >= 1) {
-                // change to the new quantiity
-                return currentCart.setIn([existingItemIndex, 'quantity'], quantity);
-            } else {
-                // remove the item
-                // (as normal arrays does not have a delete function, so seamless immutable does not provide one as well)
-                // so use the pure JS method to remove from an immutable array
-                return currentCart.filter( item => item.product_id !== product_id);
+            // check if there is a cart item with that product id
+            if (existingItemIndex !== -1) {
+                if (quantity >= 1) {
+                    // change to the new quantiity
+                    return currentCart.setIn([existingItemIndex, 'quantity'], quantity);
+                } else {
+                    // remove the item
+                    // (as normal arrays does not have a delete function, so seamless immutable does not provide one as well)
+                    // so use the pure JS method to remove from an immutable array
+                    return currentCart.filter(item => item.product_id !== product_id);
+                }
             }
-          }
         })
     }
 
@@ -150,7 +89,7 @@ export const useCart = () => {
         setCart(currentCart => {
             const existingItemIndex = currentCart.findIndex(item => item.product_id === product_id);
             if (existingItemIndex !== -1) {
-                return currentCart.filter( item => item.product_id !== product_id)
+                return currentCart.filter(item => item.product_id !== product_id)
             } else {
                 // always returna  new value for the atom when using setCart with an arrow function as the first parameter
                 return currentCart;
@@ -158,7 +97,10 @@ export const useCart = () => {
         })
     }
 
+    const setCartContent = (cartItems) => {
+        setCart(Immutable(cartItems));
+    }
     return {
-        getCart, getCartTotal, addToCart, modifyCart, deleteCartItem
+        getCart, getCartTotal, addToCart, modifyCart, deleteCartItem, setCartContent
     }
 }

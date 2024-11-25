@@ -35,31 +35,12 @@ function RegisterPage() {
         country: ""
     }
 
-    // 2. handle the form being submitted -- will be called by Formik when the user
-    // presses the submit button.
-    // parameter 1: the values from the form (an object containing all the data in the form, like req.body)
-    // parameter 2: an object, known as the formikHelpers, has a number of utilty functions 
-    // const handleSubmit = async (values, formikHelpers) => {
-    //     console.log(`${import.meta.env.VITE_API_URL}/api/register`);
-    //     try {
-    //         await axios.post(`${import.meta.env.VITE_API_URL}/api/register`, values);
-    //         formikHelpers.setSubmitting(false); // indiate the form is not being submitted 
-    //         // (i.e we have processed the form)
-    //     } catch (e) {
-    //         alert("Error registeration =" + e);
-    //     } finally {
-    //         // the finally block of a try...catch will always run
-    //         // regardless if there's any exceptions at all
-    //         setLocation("/"); // go back to the "/" route
-    //     }
 
-    // }
-    // Put this after the other hooks at the top of `RegisterPage.jsx`
     const { showMessage } = useFlashMessage();
 
     const handleSubmit = async (values, formikHelpers) => {
         try {
-            const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/register`, values);
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/users/register`, values);
             console.log('Registration successful:', response.data);
             showMessage('Registration successful!', 'success');
         } catch (error) {
@@ -75,7 +56,7 @@ function RegisterPage() {
 
 
     return (
-        <div className="container mt-5">
+        <div className="container mt-5 py-5">
             <h1>Register</h1>
 
             <Formik

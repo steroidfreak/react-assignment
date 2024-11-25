@@ -2,6 +2,7 @@ import React from 'react';
 import { useCart } from './CartStore';
 import { toast } from 'react-toastify'; // Import toast
 
+
 export default function ProductCard(props) {
     const { addToCart } = useCart();
 
@@ -20,7 +21,6 @@ export default function ProductCard(props) {
             progress: undefined,      // Show progress
         });
     }
-
     return (
         <div className="card">
             <img
@@ -30,13 +30,11 @@ export default function ProductCard(props) {
             />
             <div className="card-body">
                 <h5 className="card-title">{props.productName}</h5>
+                <p className="card-text">{props.price}</p>
                 <p className="card-text">{props.description}</p>
-                <p className="card-text">${props.price}</p>
-                <button className="btn btn-success" onClick={handleAddToCart}>
-                    Add to Cart
-                </button>
+
+                <button className="btn btn-success" onClick={handleAddToCart}>Add to Cart</button>
             </div>
         </div>
-
-    );
+    )
 }

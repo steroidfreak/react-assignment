@@ -1,1 +1,0 @@
-console.log('JavaScript for the e-commerce website is loaded.');

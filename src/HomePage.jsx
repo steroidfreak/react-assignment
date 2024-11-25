@@ -32,7 +32,7 @@ export default function HomePage() {
               </button>
             </div>
             {/* Right Column: YouTube Video */}
-            <div className="col-lg-6">
+            {/* <div className="col-lg-6">
               <div className="video-box">
                 <iframe
                   width="100%"
@@ -44,7 +44,7 @@ export default function HomePage() {
                   allowFullScreen
                 ></iframe>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

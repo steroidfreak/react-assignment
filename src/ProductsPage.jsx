@@ -10,10 +10,11 @@ function ProductsPage() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('/products.json');
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/products`);
                 setProducts(response.data);
             } catch (error) {
                 console.error('Error fetching products:', error);
+                toast.error('Failed to fetch products.');
             }
         };
 
@@ -21,23 +22,35 @@ function ProductsPage() {
     }, []);
 
     return (
-        <div className="container py-5">
-            <h1 className="text-center mb-3 mt-3">Our Products</h1>
-            <div className="row">
-                {products.map(product => (
-                    <div key={product.id} className="col-md-4 mb-4">
-                        <ProductCard
-                            imageUrl={product.imageUrl}
-                            productName={product.productName}
-                            description={product.description}
-                            id={product.id}
-                            price={product.price.toFixed(2)}
-                        />
-                    </div>
-                ))}
+        <div className="container mt-4">
+            {/* Add a centered heading */}
+            <div className="text-center  py-4">
+                <h1 className="display-4">Products</h1>
             </div>
 
-            <ToastContainer />  {/* Add ToastContainer to show notifications */}
+            {/* Product grid */}
+            <div className="row">
+                {products.length > 0 ? (
+                    products.map((p) => (
+                        <div key={p.id} className="col-12 col-md-4 col-lg-3 mb-4">
+                            <ProductCard
+                                productName={p.name}
+                                price={p.price}
+                                imageUrl={p.image}
+                                id={p.id}
+                                description={p.description}
+                            />
+                        </div>
+                    ))
+                ) : (
+                    <div className="col-12 text-center">
+                        <p>No products available at the moment.</p>
+                    </div>
+                )}
+            </div>
+
+            {/* Toast notifications */}
+            <ToastContainer />
         </div>
     );
 }
