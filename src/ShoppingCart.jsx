@@ -2,7 +2,6 @@ import React from 'react';
 
 // import useCart from our CartStore that we can access the data of the shopping cart
 import { useCart } from "./CartStore";
-import { useJwt } from './UserStore';
 
 export default function ShoppingCart() {
 
@@ -10,7 +9,7 @@ export default function ShoppingCart() {
     const { getCart, getCartTotal, modifyCart, deleteCartItem } = useCart();
     const cart = getCart();
     return <>
-        <div className="container mt-4 py-4">
+        <div className="container mt-4">
             <h1>Shopping Cart</h1>
             {cart.length === 0 ? (<p>Your cart is empty</p>) : (
                 <>
@@ -20,7 +19,7 @@ export default function ShoppingCart() {
                                 <li key={item.id} className="list-group-item d-flex justify-content-between align-item-center">
                                     <div>
                                         <h5>{item.productName}</h5>
-                                        <img src={item.imageUrl} className='product-image' />
+                                        <img src={item.imageUrl} />
                                         <div className="d-flex align-items-center mt-2">
                                             <input type="button"
                                                 className="btn btn-sm btn-secondary me-2"

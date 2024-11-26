@@ -23,12 +23,7 @@ export const useCart = () => {
 
     // getter
     const getCartTotal = () => {
-        // straightforward way to reduce
-        // let total = 0;
-        // for (let item of cart) {
-        //     total = total + item.price * item.quantity
-        // }
-        // return total;
+
 
         let total = cart.reduce(function (total, item) {
             return total + (item.price * item.quantity)
@@ -36,6 +31,8 @@ export const useCart = () => {
 
         return total; ``
     }
+
+
 
     const addToCart = (product) => {
         setCart(currentCart => {
@@ -97,10 +94,7 @@ export const useCart = () => {
         })
     }
 
-    const setCartContent = (cartItems) => {
-        setCart(Immutable(cartItems));
-    }
     return {
-        getCart, getCartTotal, addToCart, modifyCart, deleteCartItem, setCartContent
+        getCart, getCartTotal, addToCart, modifyCart, deleteCartItem
     }
 }
